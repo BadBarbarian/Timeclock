@@ -1,0 +1,28 @@
+{
+	"users" : {
+		"mjones" : {
+			"userId" : 1,
+			"firstName" : "Mark",
+			"lastName" : "Jones",
+			"permissions" : [1,2]
+		},
+
+		"gbrown" : {
+			"userId" : 2,
+			"firstName" : "Greg",
+			"lastName" : "Brown",
+			"permissions" : [1]
+		},
+
+		"battilio" : {
+			"userId" : 3,
+			"firstName" : "Barbara",
+			"lastName" : "Attilio",
+			"permissions" : [1]
+		}
+	},
+
+	"events" : {
+
+	}
+}

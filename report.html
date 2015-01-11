@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Print Report</title>
+
+  <link rel="stylesheet" href="css/index.css" />
+  <link rel="stylesheet" href="css/jquery-ui.css" />
+  <link rel="stylesheet" href="css/jquery-ui.structure.css" />
+
+  <script type="text/javascript" src="js/firebase.js"></script>
+  <script src="js/jquery.js"></script>
+  <script src="js/jquery-ui.js"></script>
+  
+  <script>
+    $(function() {
+      $( "#from" ).datepicker({
+        defaultDate: "+1w",
+        changeMonth: true,
+        numberOfMonths: 1,
+        onClose: function( selectedDate ) {
+          $( "#to" ).datepicker( "option", "minDate", selectedDate );
+        }
+      });
+      $( "#to" ).datepicker({
+        defaultDate: "+1w",
+        changeMonth: true,
+        numberOfMonths: 1,
+        onClose: function( selectedDate ) {
+          $( "#from" ).datepicker( "option", "maxDate", selectedDate );
+        }
+      });
+    });
+  </script>
+
+</head>
+
+<body>
+  <div id ="header">
+    <h1>Print Report</h1>
+  </div>
+
+  <hr />
+
+  <form class="form" method="post" action="index.html">
+    <label for="from">From</label>
+    <input type="text" id="from" name="from" required />
+    <label for="to">to</label>
+    <input type="text" id="to" name="to" required />
+    <button type="button" onclick ="printReport()">Print Report</button>
+  </form>
+
+  <br />
+
+  <ul id="report"></ul>
+
+  <button type="button" onclick ="generateData()">Generate Data</button>
+
+  <script type="text/javascript" src="js/report.js"></script>
+</body>
+</html>

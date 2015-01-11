@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Main Page</title>
+	<link rel="stylesheet" href="css/index.css" />
+	<script type="text/javascript" src="js/firebase.js"></script>
+    <script src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+</head>
+
+<body>
+	<div id ="header">
+		<h1>Timeclock Test</h1>
+		<button type="button" id="logOut" onclick ="return logOut(event)">Log Out</button>
+	</div>
+
+		<hr />
+		<br />
+
+        <div id="userName"></div>
+
+        <br />
+
+		<button type="button"  onclick="return clockIn()">Clock In</button>
+		<button type="button"  onclick="return clockOut()">Clock Out</button>
+
+		<div id="text_out"></div>
+
+		<br />
+
+		<button type="button" id="generateReport" onclick ="parent.location='report.html'">Generate Report</button>
+
+		<br />
+
+		<ul id="pastEvents"> </ul>
+
+	</body>
+	</html>
