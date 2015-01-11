@@ -1,7 +1,7 @@
-var ref = new Firebase("https://hawk-timeclock.firebaseio.com/");
-
-$("#login").click(function()
+function userLogin()
 {
+	var ref = new Firebase("https://hawk-timeclock.firebaseio.com/");
+
 	var email = $("#email").val();
 	var password = $("#password").val();
 
@@ -32,12 +32,12 @@ $("#login").click(function()
 		  }
 		});
 	}
-});
+}
 
-$('#password').keypress(function(e)
+
+(function () 
 {
-        if(e.which == 13)
-        {
-            $('#login').click();
-        }
-});
+ $("#login").click(userLogin());
+})();
+
+
