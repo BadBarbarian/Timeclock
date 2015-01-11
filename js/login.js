@@ -1,7 +1,6 @@
 function userLogin()
 {
 	var ref = new Firebase("https://hawk-timeclock.firebaseio.com/");
-
 	var email = $("#email").val();
 	var password = $("#password").val();
 
@@ -16,10 +15,12 @@ function userLogin()
 		$('input[type="text"],input[type="password"]').css("border","");
 		$('input[type="text"],input[type="password"]').css("box-shadow","");
 		
-		ref.authWithPassword({
+		ref.authWithPassword(
+		{
 		  email    : email,
 		  password : password
-		}, function(error, authData) 
+		}, 
+		function(error, authData) 
 		{
 		  if (error) 
 		  {
@@ -33,11 +34,5 @@ function userLogin()
 		});
 	}
 }
-
-
-(function () 
-{
- $("#login").click(userLogin());
-})();
 
 
